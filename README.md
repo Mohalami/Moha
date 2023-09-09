@@ -35,8 +35,15 @@ symfony console doctrine:fixtures:load
 php bin/phpunit --testdox
 ```
 
-###mis de cote car casse le code mais pourra etre revisiter, a inserer dans realisation.ttwig juste apres la fermeture de la derniere div avant de fermer la section Ce code sert a faire fonvtionner la pagination
+###mis de cote car casse le code mais pourra etre revisiter, a inserer dans realisation.twig juste apres la fermeture de la derniere div avant de fermer la section Ce code sert a faire fonvtionner la pagination
 <!--  <div>
             {%do peinture.setPageRange(2) %}
             {{ knp_pagination_render(peintures, 'base/pagination.html.twig') }}
         </div> -->
+
+## Production
+### envoie des mails de contacts
+Les mails de prise de contact sont stockés en bdd, pour les envoyer au peintre par mail, il faaut mettre en place un cron sur: 
+```bash
+symfony console app:send-contact
+```
